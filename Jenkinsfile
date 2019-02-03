@@ -16,7 +16,6 @@ pipeline {
     }
 	post {
         always {
-			archiveArtifacts artifacts: '**/target/*.hpi', fingerprint: true
 			junit testResults: '**/target/*-reports/TEST-*.xml'
             recordIssues enabledForFailure: true, tool: checkStyle(pattern: 'target/checkstyle.xml'), sourceCodeEncoding: 'UTF-8'
 			recordIssues enabledForFailure: true, tool: cpd(pattern: 'target/cpd.xml'), sourceCodeEncoding: 'UTF-8'
