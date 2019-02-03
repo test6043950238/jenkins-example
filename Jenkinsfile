@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Build Stage') {
             steps {
-                sh 'mvn clean verify checkstyle:checkstyle pmd:pmd cpd:cpd  findbugs:findbugs'
+                sh 'mvn clean verify checkstyle:checkstyle pmd:pmd findbugs:findbugs'
             }
         }
 
