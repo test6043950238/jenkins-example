@@ -16,6 +16,30 @@
         <junit.platform.version>1.0.0-M3</junit.platform.version>
 		<linkXRef>false</linkXRef>
     </properties>
+	
+	    <dependencies>
+		<dependency>
+		  <groupId>com.github.spotbugs</groupId>
+		  <artifactId>spotbugs</artifactId>
+		  <version>3.1.11</version>
+		</dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.0.0-M3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${junit.platform.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.4-SNAPSHOT</version>
+		</dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -43,29 +67,6 @@
         </plugins>		
     </build>
 
-    <dependencies>
-		<dependency>
-		  <groupId>com.github.spotbugs</groupId>
-		  <artifactId>spotbugs</artifactId>
-		  <version>3.1.11</version>
-		</dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.0.0-M3</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>${junit.platform.version}</version>
-        </dependency>
-		<dependency>
-			<groupId>org.jacoco</groupId>
-			<artifactId>jacoco-maven-plugin</artifactId>
-			<version>0.8.4-SNAPSHOT</version>
-		</dependency>
 
-    </dependencies>
 
 </project>
