@@ -4,6 +4,7 @@ public class FizzBuzz {
 
     public String play(int number) {
 
+		int x;
         if (number == 0) {
 			throw new IllegalArgumentException("Number must not be 0");
 		}
