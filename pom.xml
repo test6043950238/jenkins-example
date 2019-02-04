@@ -33,26 +33,22 @@
 			<plugin>
 			  <groupId>com.github.spotbugs</groupId>
 			  <artifactId>spotbugs-maven-plugin</artifactId>
-			  <version>3.1.10</version>
-			  <dependencies>
-				<!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
-				<dependency>
-				  <groupId>com.github.spotbugs</groupId>
-				  <artifactId>spotbugs</artifactId>
-				  <version>3.1.11</version>
-				</dependency>
-			  </dependencies>
+			  <version>3.1.10</version>>
 			</plugin>
 			<plugin>
 			  <groupId>org.jacoco</groupId>
 			  <artifactId>jacoco-maven-plugin</artifactId>
 			  <version>0.8.4-SNAPSHOT</version>
 			</plugin>
-        </plugins>
-		
+        </plugins>		
     </build>
 
     <dependencies>
+		<dependency>
+		  <groupId>com.github.spotbugs</groupId>
+		  <artifactId>spotbugs</artifactId>
+		  <version>3.1.11</version>
+		</dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -64,6 +60,11 @@
             <artifactId>junit-platform-runner</artifactId>
             <version>${junit.platform.version}</version>
         </dependency>
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.4-SNAPSHOT</version>
+		</dependency>
 
     </dependencies>
 
