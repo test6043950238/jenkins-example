@@ -1,7 +1,5 @@
 package com.techprimers.testing;
 
-import java.io.FileNotFoundException;
-
 public class FizzBuzz {
 
     public String play(int number) {
@@ -25,9 +23,4 @@ public class FizzBuzz {
         return String.valueOf(number);
     }
 	
-	void bar() {
-        try {
-            bar();
-        } catch (FileNotFoundException e) {}
-    }
 }
