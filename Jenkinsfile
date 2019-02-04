@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage ('Build Stage') {
             steps {
-                sh 'mvn clean verify checkstyle:checkstyle pmd:pmd pmd:cpd-check findbugs:findbugs spotbugs:spotbugs'
+                sh 'mvn clean verify checkstyle:checkstyle pmd:pmd pmd:cpd-check findbugs:findbugs spotbugs:spotbugs jacoco:prepare-agent test'
             }
         }
 
         stage ('Testing Stage') {
             steps {
-                sh 'mvn test'
+                sh 'mvn test jacoco:report'
             }
         }
     }
@@ -22,6 +22,7 @@ pipeline {
 			recordIssues enabledForFailure: true, tool: cpd(pattern: 'target/cpd.xml'), sourceCodeEncoding: 'UTF-8'
 			recordIssues enabledForFailure: true, tool: pmdParser(pattern: 'target/pmd.xml'), sourceCodeEncoding: 'UTF-8'
             recordIssues enabledForFailure: true, tool: spotBugs(pattern: 'target/spotbugsXml.xml'), sourceCodeEncoding: 'UTF-8'
+			jacoco()
         }
     }
 }
