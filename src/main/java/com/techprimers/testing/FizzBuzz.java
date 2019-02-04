@@ -22,4 +22,10 @@ public class FizzBuzz {
 
         return String.valueOf(number);
     }
+	
+	void bar() {
+        try {
+            bar();
+        } catch (FileNotFoundException e) {}
+    }
 }
